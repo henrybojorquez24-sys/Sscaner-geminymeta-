@@ -1,0 +1,6 @@
+{
+  "name": "Gemini API Comparison & Migration Hub",
+  "description": "Interactive code generator, comparison guide, and playground for Gemini Developer API and Gemini Enterprise Agent Platform (Vertex AI) using the unified Google Gen AI SDK.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
