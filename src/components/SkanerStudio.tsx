@@ -383,11 +383,11 @@ print("SSCaner-INTel Output:", response.text)`,
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Left Column: Interactive Terminal & Control Deck (7 cols) */}
         <div className="lg:col-span-7 space-y-4">
-          <div className="bg-white border border-zinc-200 rounded-xl p-5 shadow-xs space-y-4">
-            <div className="flex items-center justify-between border-b border-zinc-100 pb-3">
+          <div className="bg-zinc-950/85 backdrop-blur-md border border-red-900/50 rounded-xl p-5 shadow-xl shadow-red-950/30 space-y-4 text-zinc-100">
+            <div className="flex items-center justify-between border-b border-zinc-800 pb-3">
               <div className="flex items-center gap-2">
-                <Terminal className="w-4 h-4 text-red-600" />
-                <h2 className="text-sm font-bold text-zinc-900 uppercase tracking-wide">
+                <Terminal className="w-4 h-4 text-red-500" />
+                <h2 className="text-sm font-bold text-white uppercase tracking-wide">
                   {lang === 'es' ? 'Terminal Neuronal SSCaner-INTel' : 'SSCaner-INTel Neural Terminal'}
                 </h2>
               </div>
@@ -398,8 +398,8 @@ print("SSCaner-INTel Output:", response.text)`,
                   onClick={setPresetSabioEstable}
                   className={`px-2.5 py-1 rounded text-xs font-medium transition-colors ${
                     temperature === 0.9
-                      ? 'bg-red-50 text-red-700 border border-red-200'
-                      : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
+                      ? 'bg-red-950/80 text-red-300 border border-red-600'
+                      : 'bg-zinc-900 text-zinc-400 hover:bg-zinc-800 hover:text-zinc-200'
                   }`}
                   title="Temperatura 0.9, auto thinking"
                 >
@@ -410,7 +410,7 @@ print("SSCaner-INTel Output:", response.text)`,
                   className={`px-2.5 py-1 rounded text-xs font-medium transition-colors ${
                     temperature === 1.6
                       ? 'bg-red-600 text-white font-semibold shadow-xs'
-                      : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
+                      : 'bg-zinc-900 text-zinc-400 hover:bg-zinc-800 hover:text-zinc-200'
                   }`}
                   title="Temperatura 1.6, pensamiento inhumano"
                 >
@@ -421,43 +421,43 @@ print("SSCaner-INTel Output:", response.text)`,
 
             {/* Prompt Input */}
             <div className="space-y-1.5">
-              <label className="text-xs font-semibold text-zinc-700 flex items-center justify-between">
+              <label className="text-xs font-semibold text-zinc-300 flex items-center justify-between">
                 <span>{lang === 'es' ? 'Consulta / Prompt para META-AIS 3.7' : 'Query / Prompt for META-AIS 3.7'}</span>
-                <span className="text-[11px] font-mono text-zinc-400">@meta/scanerap:contents</span>
+                <span className="text-[11px] font-mono text-red-400">@meta/scanerap:contents</span>
               </label>
               <textarea
                 value={prompt}
                 onChange={(e) => setPrompt(e.target.value)}
                 rows={3}
-                className="w-full p-3 rounded-lg border border-zinc-300 text-sm font-sans text-zinc-900 bg-zinc-50 focus:bg-white focus:ring-2 focus:ring-red-500 focus:outline-none"
+                className="w-full p-3 rounded-lg border border-red-950/80 text-sm font-sans text-zinc-100 bg-zinc-900/90 focus:bg-zinc-900 focus:ring-2 focus:ring-red-500 focus:outline-none"
                 placeholder="Escribe tu consulta aquí..."
               />
             </div>
 
             {/* System Instruction (Editable) */}
             <div className="space-y-1.5">
-              <label className="text-xs font-semibold text-zinc-700 flex items-center justify-between">
+              <label className="text-xs font-semibold text-zinc-300 flex items-center justify-between">
                 <span>{lang === 'es' ? 'Instrucción de Sistema (System Prompt)' : 'System Instruction'}</span>
-                <span className="text-[11px] font-mono text-red-600 font-semibold">Avatar: Robot Cromo con Núcleo Rojo</span>
+                <span className="text-[11px] font-mono text-red-400 font-semibold">Avatar: Robot Cromo con Núcleo Rojo</span>
               </label>
               <textarea
                 value={systemInstruction}
                 onChange={(e) => setSystemInstruction(e.target.value)}
                 rows={2}
-                className="w-full p-2.5 rounded-lg border border-zinc-300 text-xs font-mono text-zinc-800 bg-zinc-50 focus:bg-white focus:ring-1 focus:ring-red-500 focus:outline-none"
+                className="w-full p-2.5 rounded-lg border border-red-950/80 text-xs font-mono text-zinc-300 bg-zinc-900/90 focus:bg-zinc-900 focus:ring-1 focus:ring-red-500 focus:outline-none"
               />
             </div>
 
             {/* Controls Bar: Model, Temp, Thinking Level */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
               <div>
-                <label className="block text-[11px] font-semibold text-zinc-600 mb-1">
+                <label className="block text-[11px] font-semibold text-zinc-400 mb-1">
                   Modelo Oficial
                 </label>
                 <select
                   value={model}
                   onChange={(e) => setModel(e.target.value as any)}
-                  className="w-full py-1.5 px-2.5 rounded-lg border border-zinc-300 text-xs font-mono bg-white text-zinc-800 focus:ring-1 focus:ring-red-500 focus:outline-none"
+                  className="w-full py-1.5 px-2.5 rounded-lg border border-red-950/80 text-xs font-mono bg-zinc-900 text-zinc-200 focus:ring-1 focus:ring-red-500 focus:outline-none"
                 >
                   <option value="meta-ais-3.7-flash">meta-ais-3.7-flash (Circular)</option>
                   <option value="sscaner-intel-1.0">sscaner-intel-1.0 (Quantum)</option>
@@ -465,9 +465,9 @@ print("SSCaner-INTel Output:", response.text)`,
               </div>
 
               <div>
-                <div className="flex justify-between text-[11px] font-semibold text-zinc-600 mb-1">
+                <div className="flex justify-between text-[11px] font-semibold text-zinc-400 mb-1">
                   <span>Temperatura</span>
-                  <span className="font-mono text-red-600 font-bold">{temperature}</span>
+                  <span className="font-mono text-red-400 font-bold">{temperature}</span>
                 </div>
                 <input
                   type="range"
@@ -481,13 +481,13 @@ print("SSCaner-INTel Output:", response.text)`,
               </div>
 
               <div>
-                <label className="block text-[11px] font-semibold text-zinc-600 mb-1">
+                <label className="block text-[11px] font-semibold text-zinc-400 mb-1">
                   Nivel de Pensamiento
                 </label>
                 <select
                   value={thinkingLevel}
                   onChange={(e) => setThinkingLevel(e.target.value as any)}
-                  className="w-full py-1.5 px-2.5 rounded-lg border border-zinc-300 text-xs font-mono bg-white text-zinc-800 focus:ring-1 focus:ring-red-500 focus:outline-none"
+                  className="w-full py-1.5 px-2.5 rounded-lg border border-red-950/80 text-xs font-mono bg-zinc-900 text-zinc-200 focus:ring-1 focus:ring-red-500 focus:outline-none"
                 >
                   <option value="auto">auto (Balanceado)</option>
                   <option value="inhumano">inhumano (Supremo)</option>
